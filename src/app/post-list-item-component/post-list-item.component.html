@@ -1,13 +1,20 @@
 
-<li class="list-group-item-success">
-    <div>
-      <h1>{{post.title}}</h1> 
-      <h2>{{post.date | date}}</h2>
+<li 
+  [ngClass]="{
+    'm-1' : true,
+    'list-group-item': true,
+    'list-group-item-success': liked && !equalLike,
+    'list-group-item-danger' : !liked && !equalLike
+  }"
+>
+    <div class="d-flex">
+      <h1 class="flex-grow-1">{{post.title}}</h1> 
+      <p class="">{{post.date | date: 'MM/dd/y, hh:mm a'}}</p>
     </div>
     <p>
       {{post.content}}
     </p>
-    <button  class="btn btn-success">Like</button>
-    <button  class="btn btn-danger">Unlike</button>
+    <button  class="btn btn-success " (click)="addLike()" >Like</button>
+    <button  class="btn btn-danger ml-2" (click)="addUnlike()">Unlike</button>
 </li>
 
