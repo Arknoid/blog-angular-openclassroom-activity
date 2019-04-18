@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../shared/interfaces/posts.interface';
 
 @Component({
-  selector: 'app-post-list-component',
-  templateUrl: './post-list-component.component.html',
-  styleUrls: ['./post-list-component.component.css']
+  selector: 'app-post-list',
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.css']
 })
-export class PostListComponentComponent implements OnInit {
+export class PostListComponent implements OnInit {
 
   @Input() posts: Post[];
 
